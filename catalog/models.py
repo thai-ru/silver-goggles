@@ -57,7 +57,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     year = models.DateField(null=True, blank=True)
-    edition = models.CharField(max_length=200, help_text='What edition is the book e.g 1\'st edition')
+    edition = models.CharField(max_length=200, help_text='What edition is the book e.g 1\'st edition', null= True, blank=True)
 
     class Meta:
         ordering = ['last_name', 'first_name']
