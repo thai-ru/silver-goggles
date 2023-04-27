@@ -25,10 +25,11 @@ class BooksInstanceInline(admin.TabularInline):
 #Book Admin model
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author')
+    list_display = ('title', 'author', 'display_genre', 'year', 'edition')
     inlines = [BooksInstanceInline]
 
 admin.site.register(Book, BookAdmin)
+
 
 #BookInstance admin model
 

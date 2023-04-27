@@ -15,7 +15,9 @@ class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book!1")
-    isbn = models.CharField('ISBN', max_length=13, unique=True, help_text='13 Character <a href="https://www.isbn-international.org/content/what-isbn">ISBN number Guide </a>')
+    year = models.DateField(null=True, blank=True)
+    edition = models.CharField(max_length=200, help_text='What edition is the book e.g 1\'st edition', null= True, blank=True)
+
 
     genre = models.ManyToManyField(Genre, help_text='Select a Genre for this book')
 
@@ -25,6 +27,11 @@ class Book(models.Model):
     def  get_absolute_url(self):
         
         return reverse('book-detail', args=[str(self.id)])
+
+    def display_genre(self):
+        return ', '.join(genre.name for genre in self.genre.all()[:3])
+
+    display_genre.short_description= 'Genre'
 
 class BookInstance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Set unique text for BookInstance')
@@ -56,9 +63,7 @@ class BookInstance(models.Model):
 class Author(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    year = models.DateField(null=True, blank=True)
-    edition = models.CharField(max_length=200, help_text='What edition is the book e.g 1\'st edition', null= True, blank=True)
-
+  
     class Meta:
         ordering = ['last_name', 'first_name']
 
