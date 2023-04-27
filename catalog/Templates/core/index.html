@@ -1,6 +1,9 @@
 <DOCTYPE html>
 <html>
     <head>
+        {% block title %}LocalLib | {% endblock title %}
+
+        {% load static %}
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
 
@@ -20,6 +23,9 @@
         {/* NavBar */}
 
         {/* Site Content */}
+        {% block content %}
+        {% endblock content %}
+        
 
 
         {/* Footer */}
