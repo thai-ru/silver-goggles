@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %} {% endblock title %} | LocalLib</title>
+        
+        {% load static %}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/339d7a47f3.js" crossorigin="anonymous"></script>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+
+    <body>
+                <!--NavBar -->
+                <nav class=" flex justify-between bg-slate-900 p-4 lg:p-6 text-white rounded-tl-2xl shadow-lg shadow-slate-400 hover:shadow-bg hover:shadow-lg hover:shadow-slate-500 ">
+                    <div>
+                        <p class="font-serif text-xl" ><a href=" {% url 'index' %} " >Thaish Library</a></p>
+                    </div>
+
+                        <div >
+                                <ul  class=" flex gap-2 lg:gap-4 " >
+                                    <li><a href=" {% url 'index' %} " >Catalog</a></li>
+                                    <li>My Books</li>
+                                    <li>About</li>
+                                </ul>
+                        </div>
+                </nav>
+                    <!-- NavBar -->
+            
+                    <!-- Site Content -->
+
+                    {% block content %}
+                    {% endblock content %}
+            
+                    <!-- Footer -->
+                    <footer class=' bg-slate-900 p-4 text-white' >
+                        <div>
+                            <div class=' grid col-span-2 grid-cols-2 md:flex md:justify-evenly lg:justify-between gap-6 md:gap-6 my-2 '>
+
+                                <!--Social Links-->
+                                <div class=' gap-2 lg:gap-4 ' >
+                                    <h3 class=" text-lg lg:text-xl font-semibold mb-4 font-serif ">Socials</h3>
+                                    <ul class=" text-md lg:text-lg font-mono" >
+
+                                        <!--Github-->
+                                        <a href="https://github.com/thai-ru" target="_blank" class="text-gray-400 hover:text-white flex gap-2 items-center">
+                                            <i class="fa-brands fa-github"></i>
+                                            <li>Github</li>
+                                        </a>
+
+                                        <a href="https://twitter.com/wireless_2_5_4?t=2wxHj5-98y8g6JTbKyDg0g&s=09" target="_blank" class=" flex gap-2 items-center">
+                                            <i class="fa-brands fa-twitter text-sky-700"></i>
+                                            <li class="text-gray-400 hover:text-white" >Twitter</li>
+                                        </a>
+
+                                        <a href="https://instagram.com/real_techroyals?igshid=ZDdkNTZiNTM=" target="_blank" class="text-gray-400 hover:text-white flex gap-2 items-center">
+                                            <i class="fa-brands fa-instagram"></i>
+                                            <li>Instagram</li>
+                                        </a>
+
+                                        <a href="https://www.linkedin.com/in/robin-thairu" target="_blank" class=" flex gap-2 items-center ">
+                                            <i class="fa-brands fa-linkedin text-sky-700"></i>
+                                            <li class="text-gray-400 hover:text-white">LinkedIn</li>
+                                        </a>
+                    
+                                        <a href="https://wa.me/716624050?text=Hey my name is (your name)..." target="_blank" class=" flex gap-2 items-center ">
+                                            <i class="fa-brands fa-whatsapp text-green-400"></i>
+                                            <li class=" text-gray-400 hover:text-white">Whatsapp</li>
+                                        </a>
+                                    </ul>
+                                </div>
+
+                                <!--Site Links-->
+
+                                <div class=" gap-2 lg:gap-4 ">
+                                    <h3 class=" text-lg lg:text-xl font-semibold mb-4 font-serif" >Links</h3>
+
+                                    <ul class=" text-md lg:text-lg font-mono"  >
+                                        <li><a href=" {% url 'index' %} " >About<a></li>
+                                        <li><a href=" {% url 'index' %} " >Catalog<a></li>
+                                        <li><a href=" {% url 'index' %} " >Books<a></li>
+                                    </ul>
+                                </div>
+
+                                <!--Project Links-->
+
+                                <div class=" gap-2 lg:gap-4 items-center">
+                                    <h3 class=" text-lg lg:text-xl font-semibold mb-4 font-serif" >Projects</h3>
+
+                                    <ul class=" text-md lg:text-lg font-mono"  >
+                                        <li class="hover:text-rose-600"><a href=" https://thaishblog.herokuapp.com " target="_blank" >Blog | ThaishWave<a></li>
+                                        <!--<li><a href=" {% url 'index' %} " ><a></li>
+                                        <li><a href=" {% url 'index' %} " >Books<a></li>-->
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <hr class="bg-cyan-200 border-2 "><hr/>
+
+                                <!--Mail List-->
+                                    <div class="font-serif text-center my-4">
+                                        <h2 class="text-lg lg:text-xl font-semibold mb-4">Join our NewsLetter</h2>
+
+                                            <div class="flex gap-2 justify-center">
+                                                <input type='email' id='newsletter' placeholder="youremail@example.com" class=" text-center rounded-2xl text-rose-900"/>
+                                                    <button class=" bg-red-700 rounded-2xl p-4 " >
+                                                          <h3 class=" text-md lg:text-lg">Subscribe</h3>
+                                                    </button>
+                                            </div>
+                                        <p class="mt-3 text-lg">Coming Soon....</p>
+                                    </div>
+
+                                <hr class="bg-cyan-200 border-2 "><hr/>
+                
+                                <!-- TagLine -->
+                                <div class=" text-center mt-4 lg:mt-6" >
+                                    <p class='mb-2' >Local Library manager &copy; 2023<p>
+                                    <p class='' >ThaisWave &reg; | Made with 🤎 from N🤎irobi</p>
+                                </div>
+                        </div>
+                    </footer>
+                     <!-- Footer -->
+
+    </body>
+</html>

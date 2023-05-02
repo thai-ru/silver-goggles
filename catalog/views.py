@@ -17,4 +17,4 @@ def index(request):
         'num_instances_available': num_instances_available
     }
 
-    return render(request, 'index.html', context=context)
+    return render(request, 'core/homepage.html', context=context)
